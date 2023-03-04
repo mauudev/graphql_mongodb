@@ -1,0 +1,21 @@
+{
+  "name": "graphql_mongodb",
+  "version": "1.0.0",
+  "description": "Practica de gql y mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gql",
+    "mongodb"
+  ],
+  "author": "Mau",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "apollo-server-express": "^3.12.0",
+    "mongoose": "^7.0.0"
+  },
+  "type": "module"
+}

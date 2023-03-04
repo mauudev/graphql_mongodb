@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "4a71bf77-6e9b-4191-bd72-0ee6039f17fb",
+		"name": "gql-products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Query {\n  getProductsList {\n    category\n    colors\n    id\n    price\n    productName\n    imgPath\n  }\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation Mutation($productName: String!, $category: String, $price: Int, $colors: [String!], $imgPath: String) {\n  addProduct(productName: $productName, category: $category, price: $price, colors: $colors, imgPath: $imgPath) {\n    category\n    colors\n    id\n    price\n    productName\n  }\n}",
+						"variables": "{\n  \"productName\": \"earphone\",\n  \"category\": \"Gadget\",\n  \"price\": 1430,\n  \"colors\": [\"red\", \"blue\"],\n  \"imgPath\": \"/earphones\"\n}"
+					}
+				},
+				"url": {
+					"raw": "localhost:9000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation Mutation($updateProductId: ID!, $productName: String, $price: Int) {\n  updateProduct(id: $updateProductId, productName: $productName, price: $price) {\n    id\n    productName\n    price\n  }\n}",
+						"variables": "{\n  \"updateProductId\": \"6402ada3c2cdefe976b44773\",\n  \"productName\": \"Medium Fan\",\n  \"price\": 350\n}"
+					}
+				},
+				"url": {
+					"raw": "localhost:9000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation Mutation($deleteProductId: ID!) {\n  deleteProduct(id: $deleteProductId)\n}",
+						"variables": "{\n  \"deleteProductId\": \"6402ad94c2cdefe976b44771\"\n}"
+					}
+				},
+				"url": {
+					"raw": "localhost:9000",
+					"host": [
+						"localhost"
+					],
+					"port": "9000"
+				}
+			},
+			"response": []
+		}
+	]
+}
