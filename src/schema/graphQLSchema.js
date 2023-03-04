@@ -28,7 +28,7 @@ input ProductInput {
 }
 
 type Mutation {
-    updateProduct(id: ID! ,category: String!, productName: String!, price: Int!, colors: [String!], imgPath: String!): Product
+    updateProduct(id: ID!, category: String, productName: String, price: Int, colors: [String], imgPath: String): Product
     addProduct(category: String, productName: String!, price: Int, colors: [String!], imgPath: String): Product
     addProducts(products: [ProductInput!]!): [Product]!
     deleteProduct(id: ID!): Boolean!
